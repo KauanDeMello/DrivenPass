@@ -2,7 +2,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { PrismaClient } = require('@prisma/client');
 
+
 const prisma = new PrismaClient();
+
 
 // Função para criar o token de autenticação
 function generateAuthToken(userId) {
@@ -61,5 +63,7 @@ async function login(req, res) {
     return res.status(500).json({ error: 'Erro no servidor.' });
   }
 }
+
+
 
 module.exports = { register, login };
